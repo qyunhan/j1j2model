@@ -1,8 +1,8 @@
-# j1j2model
+# j1j2model Supervised CNN/MLP
 
-Project
+## Project
 
-Models:
+### Models:
 Contains the trainable ML models used in the application.
 1. cnn_regressor: 1D Convolutional Neural network to predict energy of quantum spin configurations
 - Input: (batch, 3, n_spins) representing (x, y, z) spin components
@@ -19,12 +19,12 @@ Contains the trainable ML models used in the application.
 - Layers: Fully connected layers with ReLu activations
 - Output: Scalar energy
 
-Physics:
+### Physics:
 Implements the J1J2 model, constructs Hamiltonian to compute exact energies used as supervised lables
 1. class QuantumJ1J2solver: Builds H, applies Pauli operators, computes expectation energy
 - Methods: build hamiltonian, compute energy, get training data 
 
-Utils:
+### Utils:
 1. Data:
 - Train val test split
 - Set global seed
@@ -36,14 +36,13 @@ Utils:
 - Angle features for CNN: Spins arranged in (B, 3, n_spins)
   Channel 0 = x components, Channel 1 = y components, Channel 2 = z components
   Each spin treated as a pixel with 3 channels 
-                      
 3. Training:
 - Train model, Validate model, Plotting curves
 
-Train:
+### Train:
 1. train_mlp: full pipeline for MLP
 2. train_cnn: full pipeline for CNN
 Calls quantumJ1J2solver to generate dataset first, then extracts angle features, split dataset, builds model, trains with adam and saves metrics
 Model evaluated with MLE (loss curves shown in plot)
 
-Run_experiments: To call and run the model
+### Run_experiments: To call and run the model
