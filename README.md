@@ -9,7 +9,7 @@ Contains the trainable ML models used in the application.
 - Layers: Conv1d (3->16) + ReLU, Conv1d (16->32) + ReLU, AdaptiveAvgPool1d (output=1) + Flatten, Linear + ReLU, Linear + Output
           Conv1d layers extract spatial features from spin configurations. ReLU makes it non-linear.
           Second convolution leans higher level features, multi-spin correlations to capture more abstract spatial relationships
-          Use AdaptiveAvgPool1d so that CNN is size invariant and stable. 
+          AdaptiveAvgPool1d is used so that CNN is size invariant and stable. 
           Flatten prepares for fully connected layers, where (batch, 32, 1) is flattened to a vector.
           Fully connected layers learn complex mappings from extracted features to energy prediction learning global interactions.
 - Output: Predicted scalar energy
