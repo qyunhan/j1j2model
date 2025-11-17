@@ -44,4 +44,4 @@ Train:
 Calls quantumJ1J2solver to generate dataset first, then extracts angle features, split dataset, builds model, trains with adam and saves metrics
 Model evaluated with MLE (loss curves shown in plot)
 
-Run_experiments: can 
+Run_experiments: To call and run the model
